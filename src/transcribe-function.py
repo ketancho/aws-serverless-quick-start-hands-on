@@ -16,7 +16,7 @@ def lambda_handler(event, context):
             Media={
                 'MediaFileUri': 'https://s3.ap-northeast-1.amazonaws.com/' + bucket + '/' + key
             },
-            OutputBucketName='YYYYMMDD-transcribe-output-YourName'
+            OutputBucketName='yyyymmdd-transcribe-output-yourname'
         )
     except Exception as e:
         print(e)
