@@ -14,7 +14,7 @@ def lambda_handler(event, context):
             TranscriptionJobName= datetime.datetime.now().strftime("%Y%m%d%H%M%S") + '_Transcription',
             LanguageCode='en-US',
             Media={
-                'MediaFileUri': 'https://s3.ap-northeast-1.amazonaws.com/' + bucket + '/' + key
+                'MediaFileUri': 's3://' + bucket + '/' + key
             },
             OutputBucketName='yyyymmdd-transcribe-output-yourname'
         )
@@ -22,3 +22,4 @@ def lambda_handler(event, context):
         print(e)
         print('Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.'.format(key, bucket))
         raise e
+
