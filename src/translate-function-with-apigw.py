@@ -12,7 +12,7 @@ def lambda_handler(event, context):
         TargetLanguageCode='en'
     )
 
-    output_text = response.get('TranslatedText')
+    output_text = response['TranslatedText']
 
     return {
         'statusCode': 200,
